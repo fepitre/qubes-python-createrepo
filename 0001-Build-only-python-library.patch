@@ -1,0 +1,25 @@
+From 4b2665168d8b61d2d67c1a6765947729bdd17572 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fr=C3=A9d=C3=A9ric=20Pierret?= <frederic.epitre@orange.fr>
+Date: Sun, 25 Nov 2018 18:13:46 +0100
+Subject: [PATCH] Build only python library
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 0b5738b..4ec8056 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,7 +4,7 @@ VERSION=$(shell awk '/Version:/ { print $$2 }' ${PKGNAME}.spec)
+ RELEASE=$(shell awk '/Release:/ { print $$2 }' ${PKGNAME}.spec)
+ CVSTAG=createrepo-$(subst .,_,$(VERSION)-$(RELEASE))
+ PYTHON=python
+-SUBDIRS = $(PKGNAME) bin docs
++SUBDIRS = $(PKGNAME)
+ PYFILES = $(wildcard *.py)
+ 
+ 
+-- 
+2.17.1
+
